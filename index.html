@@ -144,6 +144,18 @@
     
     
     
+    #biblioteca{
+        grid-column: 3;
+        grid-row: 2;
+        
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    
+    
     
     #colores{
         grid-column: 2;
@@ -259,6 +271,14 @@
             </div>
             
             <div class="wrap">
+                <p class="switch_label">Música</p>
+                <div class="switch" onclick="switch_musica()">
+                    <input id="musica_switch" type="checkbox" class="switch-input" />
+                    <label for="musica_switch" class="switch-label"></label>
+                </div>
+            </div>
+            
+            <div class="wrap">
                 <p class="switch_label">Delay</p>
                 <div class="input">
                     <input id="duracion_input" type="" />
@@ -302,15 +322,24 @@
             </div>
         </div>
         
+        <div id="biblioteca"></div>
         
     </div>
     
     <script>
-        /*   this.classList.remove('bad');
-         this.classList.add('good');*/
+        
+    city_music = new Audio('city_in_the_clouds.mp3');
+    city_music.loop = true;
+    
+    function switch_musica(){
+        if (document.querySelector("#musica_switch").checked) city_music.play();
+        else city_music.pause();
+    }
+                                        
     
     // Setear esto al antojo:
     var alto = 30;
+    document.querySelector("#duracion_input").value = 50;
     
     var dibugrid = document.querySelector('#dibugrid');
     var h = dibugrid.clientHeight;
