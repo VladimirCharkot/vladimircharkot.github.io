@@ -87,7 +87,7 @@
         height: 100%;
     }
     
-    #switch_wrap{
+    .wrap{
         align-self: center;
         display: flex;
         width: 100%;
@@ -97,6 +97,14 @@
     .switch_label{
         font-family: 'Spartan', sans-serif;
         display: inline-block;
+    }
+    
+    .input{
+        width: 30%;
+    }
+    
+    #duracion_input{
+        width: 100%;
     }
     
     
@@ -136,6 +144,21 @@
     
     
     
+    
+    #colores{
+        grid-column: 2;
+        grid-row: 3;
+        align-content: center;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    
+    .color_label{
+        position: relative;
+        left: -40px;
+        top: -5px;
+    }
     
     
     
@@ -217,7 +240,7 @@
         
         <div id="controles">
             
-            <div class="play-btn" onclick="play(200)">
+            <div class="play-btn" onclick="play()">
                 <a href="#">
                     <svg viewBox="0 0 26 26">
                         <polygon class="play-btn__svg" points="9.33 6.69 9.33 19.39 19.3 13.04 9.33 6.69"/>
@@ -227,7 +250,7 @@
             </div>
             
             
-            <div id="switch_wrap">
+            <div class="wrap">
                 <p class="switch_label">Escribir</p>
                 <div class="switch">
                     <input id="escribir_switch" type="checkbox" class="switch-input" />
@@ -235,10 +258,49 @@
                 </div>
             </div>
             
+            <div class="wrap">
+                <p class="switch_label">Delay</p>
+                <div class="input">
+                    <input id="duracion_input" type="" />
+                </div>
+            </div>
+            
         </div>
         
         
         <div id="dibugrid"></div>
+        
+        
+        <div id="colores">
+            <div class="color_g">
+                <input id="color_z" type="color"/>
+                <label for="color_z" class="color_label">z</label>
+            </div>
+            <div class="color_g">
+                <input id="color_x" type="color"/>
+                <label for="color_x" class="color_label">x</label>
+            </div>
+            <div class="color_g">
+                <input id="color_c" type="color"/>
+                <label for="color_c" class="color_label">c</label>
+            </div>
+            <div class="color_g">
+                <input id="color_v" type="color"/>
+                <label for="color_v" class="color_label">v</label>
+            </div>
+            <div class="color_g">
+                <input id="color_b" type="color"/>
+                <label for="color_b" class="color_label">b</label>
+            </div>
+            <div class="color_g">
+                <input id="color_n" type="color"/>
+                <label for="color_n" class="color_label">n</label>
+            </div>
+            <div class="color_g">
+                <input id="color_m" type="color"/>
+                <label for="color_m" class="color_label">m</label>
+            </div>
+        </div>
         
         
     </div>
@@ -306,11 +368,11 @@
     construir_tortuga();
     
     // colorea el pixel en (colu, fila)
-    function colorear(colu, fila){
+    function colorear(colu, fila, color){
         //console.log(dibugrid.children[fila * ancho + colu]);
         var i =fila * ancho + colu
         if (i >= 0 && i <= ancho*alto)
-        dibugrid.children[fila * ancho + colu].style.backgroundColor = 'black';
+        dibugrid.children[fila * ancho + colu].style.backgroundColor = color;
     }
     
     
@@ -350,7 +412,7 @@
         if (tecla == 'a'){ mostrar.style.rotate = "180deg"; }
         if (tecla == 'w'){ mostrar.style.rotate = "-90deg"; }
         if (tecla == 's'){ mostrar.style.rotate = "90deg"; }
-        if (tecla == 'x'){ mostrar.style.rotate = "0deg"; }
+        if ('zxcvbnm'.includes(tecla)){ mostrar.style.rotate = "0deg"; }
         
         mostrar.style.animation = duracion + "s grow";
         reset_anim(mostrar);
@@ -366,7 +428,7 @@
 
     //var test = "sssdawwdwdwdwdwdwssadsasssdaaaaa";
     function compactar(s){
-        var cre = /([wasdx]+?)\1+/g;
+        var cre = /([wasdzxcvbnm]+?)\1+/g;
         
         while (r = cre.exec(s)) {
             //console.log(r, "& re.lastIndex", cre.lastIndex);
@@ -377,7 +439,7 @@
     }
 
     function expandir(s){
-        var ere =/\(([wasdx]+)\)(\d+)/g;
+        var ere =/\(([wasdzxcvbnm]+)\)(\d+)/g;
         
         while (r = ere.exec(s)) {
             //console.log(r, "& re.lastIndex", ere.lastIndex);
@@ -415,7 +477,10 @@
         if (char == 'a') tortuga_columna = (ancho + tortuga_columna - 1) % ancho;
         if (char == 'w') tortuga_fila = (alto + tortuga_fila - 1) % alto;
         if (char == 's') tortuga_fila = (alto + tortuga_fila + 1) % alto;
-        if (char == 'x') colorear(tortuga_columna, tortuga_fila);
+        if ('zxcvbnm'.includes(char)) {
+            var color = document.querySelector("#color_"+char).value;
+            colorear(tortuga_columna, tortuga_fila, color);
+        }
         tortuga.style.translate = (tortuga_columna * lado) + 'px ' + (tortuga_fila * lado) + 'px';
     }
     
@@ -443,7 +508,7 @@
         if (e.key == 'ArrowLeft' || e.key == 'a' || e.key == 'A')   comando = 'a';
         if (e.key == 'ArrowDown' || e.key == 's' || e.key == 'S')   comando = 's';
         if (e.key == 'ArrowUp' || e.key == 'w' || e.key == 'W')     comando = 'w';
-        if (e.key == ' ' || e.key == 'x')                           comando = 'x';
+        if ('zxcvbnm'.includes(e.key))                              comando = e.key;
         
         comandar_tortuga(comando);
         show(comando, 1);
@@ -465,9 +530,11 @@
         
     }
     
-    function play(delta){
+    function play(){
         var c = document.querySelector("#codigo_expandido").value;
         console.log("Play!");
+        
+        var delta = document.querySelector("#duracion_input").value;
         
         for (var i=0; i<c.length; i++){
             //leer(c[i]);
