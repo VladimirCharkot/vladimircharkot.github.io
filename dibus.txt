@@ -1,0 +1,24 @@
+Espiral:
+
+x
+(wx)2(dx)2(sx)4(ax)4
+(wx)6(dx)6(sx)8(ax)8
+(wx)10(dx)10(sx)12(ax)12
+(wx)14(dx)14(sx)16(ax)16
+(wx)18(dx)18(sx)20(ax)20
+(wx)22(dx)22(sx)24(ax)24
+
+
+Barquito:
+
+(d)4 (xds)3 xa (xwa)2
+xsxdsxax (a)4 s (xd)9
+s (ax)7 s (dx)5
+
+
+
+Flor:
+
+dn(d)2n(s)2n(a)2nw
+dm(s)2(bs)2(a)2(vd)4
+vs(av)3s(vd)3
