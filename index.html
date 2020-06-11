@@ -5,6 +5,11 @@
         
     <link rel="stylesheet" href="dibubots.css">
     <link rel="stylesheet" href="switch.css">
+        
+    <!-- Tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
     
 </head>
 
@@ -28,6 +33,13 @@
             <div id="bloques_compacto" class="caja_codigo"></div>
         </div>
         
+        <!--<div id="ayuda">
+            <a href="#">
+                <svg viewBox="0 0 26 26">
+                    <path class="play-btn__svg" d="M8 2A4 4 0 0 0 4 6H5A3 3 0 0 1 8 3 3 3 0 0 1 11 6 3 3 0 0 1 8 9H7V12H8V10A4 4 0 0 0 12 6 4 4 0 0 0 8 2M7 13V14H8V13H7" fill="#4d4d4d"/>
+                </svg>
+            </a>
+        </div>-->
         
         <div id="controles">
             
@@ -42,7 +54,7 @@
             
             
             <div class="wrap">
-                <p class="switch_label">Escribir</p>
+                <p id="label_escribir" class="switch_label">Escribir</p>
                 <div class="switch">
                     <input id="escribir_switch" type="checkbox" class="switch-input" />
                     <label for="escribir_switch" class="switch-label"></label>
@@ -58,7 +70,7 @@
             </div>
             
             <div class="wrap">
-                <p class="switch_label">Delay</p>
+                <p id="label_delay" class="switch_label">Delay</p>
                 <div class="input">
                     <input id="duracion_input" type="" />
                 </div>
@@ -112,5 +124,33 @@
     <script src="controles.js"></script>
     <script src="colores.js"></script>
     
+    <script>
+        tippy('#codigo_expandido', {
+              allowHTML: true,
+              content: '<p>Usá las letras <b>w</b>, <b>a</b>, <b>s</b> y <b>d</b> para indicar movimiento, y las letras <b>z</b>, <b>x</b>, <b>c</b>, <b>v</b>, <b>b</b>, <b>n</b> y <b>m</b> para pintar. Cada una de esas letras corresponde con uno de los colores que se encuentran al fondo de la página ↓↓↓</p>',
+              theme: 'azure',
+              // Debug:
+              //hideOnClick: false,
+              //trigger: 'click'
+              });
+              
+          tippy('#codigo_compacto', {
+                allowHTML: true,
+                content: '<p>Encerrá instrucciones entre paréntesis y poné un número al final para que esas instrucciones se repitan ese número de veces. Por ejemplo, <b>(</b>sdv<b>)3</b> es equivalete a sdvsdvsdv</p>',
+                theme: 'azure',
+                });
+                
+          tippy('#label_escribir', {
+                allowHTML: true,
+                content: '<p>Las instrucciones que ejecutes mientras esto esté encendido, ¡se van a escribir automáticamente a las cajas de código! Acordate de apagarla cuando no quieras agregar más código</p>',
+                theme: 'azure',
+              });
+              
+          tippy('#label_delay', {
+                allowHTML: true,
+                content: '<p>Este valor controla la velocidad con la que se ejecutan los programas. Cuanto más chico el valor, más rápido corre el programa.</p>',
+                theme: 'azure',
+                });
+    </script>
     
 </body>

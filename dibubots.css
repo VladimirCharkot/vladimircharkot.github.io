@@ -122,6 +122,17 @@
 
 
 
+#ayuda{
+    grid-column: 3;
+    grid-row: 1;
+    height: 100px;
+    width: 100px;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
 
 #controles{
     grid-column: 1;
