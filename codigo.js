@@ -109,10 +109,10 @@ function bloquificar_compacto(p){
             var b = document.createElement('img');
             
             if ('wasd'.includes(t) ){ b.setAttribute('src', 'flecha-recta.png'); }
-            if (t == 'w') { b.style.rotate = '-90deg';  };
-            if (t == 'a') { b.style.rotate = '-180deg'; };
-            if (t == 's') { b.style.rotate = '90deg';   };
-            if (t == 'd') { b.style.rotate = '0deg';    };
+            if (t == 'w') { b.style.transform = 'rotate(-90deg)';  };
+            if (t == 'a') { b.style.transform = 'rotate(-180deg)'; };
+            if (t == 's') { b.style.transform = 'rotate(90deg)';   };
+            if (t == 'd') { b.style.transform = 'rotate(0deg)';    };
             if ('zxcvbnm'.includes(t)) {
                 b.setAttribute('src', 'trazo.png');
             }
@@ -135,10 +135,10 @@ function bloquificar_expandido(p){
         if (t == '(' || t == ')') continue;
         
         if ('wasd'.includes(t) ){ b.setAttribute('src', 'flecha-recta.png'); }
-        if (t == 'w') { b.style.rotate = '-90deg';  };
-        if (t == 'a') { b.style.rotate = '-180deg'; };
-        if (t == 's') { b.style.rotate = '90deg';   };
-        if (t == 'd') { b.style.rotate = '0deg';    };
+        if (t == 'w') { b.style.transform = 'rotate(-90deg)';  };
+        if (t == 'a') { b.style.transform = 'rotate(-180deg)'; };
+        if (t == 's') { b.style.transform = 'rotate(90deg)';   };
+        if (t == 'd') { b.style.transform = 'rotate(0deg)';    };
         
         if ('zxcvbnm'.includes(t)) {
             b.setAttribute('src', 'trazo.png');

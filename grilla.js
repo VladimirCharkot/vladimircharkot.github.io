@@ -82,7 +82,8 @@ function comandar_tortuga(char){
         var color = document.querySelector("#color_"+char).value;
         colorear(tortuga_columna, tortuga_fila, color);
     }
-    tortuga.style.translate = (tortuga_columna * lado) + 'px ' + (tortuga_fila * lado) + 'px';
+    console.log("Cambiando transform ", tortuga.style.transform, " a ", "translate(" + (tortuga_columna * lado) + 'px, ' + (tortuga_fila * lado) + 'px)');
+    tortuga.style.transform = 'translate(' + (tortuga_columna * lado) + 'px, ' + (tortuga_fila * lado) + 'px)';
 }
 
 

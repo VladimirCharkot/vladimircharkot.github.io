@@ -17,11 +17,11 @@ function show(tecla, duracion){
     
     monitor.addEventListener("animationend", () => { }, true);
     
-    if (tecla == 'd'){ mostrar.style.rotate = "0deg"; }
-    if (tecla == 'a'){ mostrar.style.rotate = "180deg"; }
-    if (tecla == 'w'){ mostrar.style.rotate = "-90deg"; }
-    if (tecla == 's'){ mostrar.style.rotate = "90deg"; }
-    if ('zxcvbnm'.includes(tecla)){ mostrar.style.rotate = "0deg"; }
+    if (tecla == 'd'){ mostrar.style.transform = "rotate(0deg)"; }
+    if (tecla == 'a'){ mostrar.style.transform = "rotate(180deg)"; }
+    if (tecla == 'w'){ mostrar.style.transform = "rotate(-90deg)"; }
+    if (tecla == 's'){ mostrar.style.transform = "rotate(90deg)"; }
+    if ('zxcvbnm'.includes(tecla)){ mostrar.style.transform = "rotate(0deg)"; }
     
     mostrar.style.animation = duracion + "s grow";
     reset_anim(mostrar);
