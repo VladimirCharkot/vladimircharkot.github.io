@@ -1,156 +1,26 @@
-<head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
-        
-    <link rel="stylesheet" href="dibubots.css">
-    <link rel="stylesheet" href="switch.css">
-        
-    <!-- Tooltips -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-    
-</head>
 
-<body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+        
+        <div id="base">
+            
+            <div id="dibubots" class="menulink">
+                <a href="dibubots.html">dibubots</a>
+            </div>
+            <div id="arboles" class="menulink">
+                <object data="tree.svg" type="image/svg+xml"></object>
+                <a href="arboles.html">arboles</a>
+            </div>
+            
+        </div>
+        
+    </body>
+    
+</html>
 
-    
-    <div id="base">
-        
-        
-        <div id="monitor_div">
-            <!--<svg id="monitor" viewBox="0 0 22 22">-->
-                <img id="trazo" src="trazo.png" />
-                <img id="flecha" src="flecha-recta.png" />
-        </div>
-        
-        
-        <div id="codigos">
-            <textarea id="codigo_expandido" class="caja_codigo" name="programa" placeholder="Programa sin repeticiones" onkeyup="sincronizar_compacto()"></textarea>
-            <textarea id="codigo_compacto" class="caja_codigo" name="programa" placeholder="Programa con repeticiones" onkeyup="sincronizar_expandido()"></textarea>
-            <div id="bloques_expandido" class="caja_codigo"></div>
-            <div id="bloques_compacto" class="caja_codigo"></div>
-        </div>
-        
-        <!--<div id="ayuda">
-            <a href="#">
-                <svg viewBox="0 0 26 26">
-                    <path class="play-btn__svg" d="M8 2A4 4 0 0 0 4 6H5A3 3 0 0 1 8 3 3 3 0 0 1 11 6 3 3 0 0 1 8 9H7V12H8V10A4 4 0 0 0 12 6 4 4 0 0 0 8 2M7 13V14H8V13H7" fill="#4d4d4d"/>
-                </svg>
-            </a>
-        </div>-->
-        
-        <div id="controles">
-            
-            <div class="play-btn" onclick="play()">
-                <a href="#">
-                    <svg viewBox="0 0 26 26">
-                        <polygon class="play-btn__svg" points="9.33 6.69 9.33 19.39 19.3 13.04 9.33 6.69"/>
-                        <path class="play-btn__svg" d="M26,13A13,13,0,1,1,13,0,13,13,0,0,1,26,13ZM13,2.18A10.89,10.89,0,1,0,23.84,13.06,10.89,10.89,0,0,0,13,2.18Z"/>
-                    </svg>
-                </a>
-            </div>
-            
-            
-            <div class="wrap">
-                <p id="label_escribir" class="switch_label">Escribir</p>
-                <div class="switch">
-                    <input id="escribir_switch" type="checkbox" class="switch-input" />
-                    <label for="escribir_switch" class="switch-label"></label>
-                </div>
-            </div>
-            
-            <div class="wrap">
-                <p class="switch_label">Música</p>
-                <div class="switch" onclick="switch_musica()">
-                    <input id="musica_switch" type="checkbox" class="switch-input" />
-                    <label for="musica_switch" class="switch-label"></label>
-                </div>
-            </div>
-            
-            <div class="wrap">
-                <p id="label_delay" class="switch_label">Delay</p>
-                <div class="input">
-                    <input id="duracion_input" type="" />
-                </div>
-            </div>
-            
-        </div>
-        
-        
-        <div id="dibugrid"></div>
-        
-        
-        <div id="colores">
-            <div class="color_g">
-                <input id="color_z" type="color"/>
-                <label for="color_z" class="color_label">z</label>
-            </div>
-            <div class="color_g">
-                <input id="color_x" type="color"/>
-                <label for="color_x" class="color_label">x</label>
-            </div>
-            <div class="color_g">
-                <input id="color_c" type="color"/>
-                <label for="color_c" class="color_label">c</label>
-            </div>
-            <div class="color_g">
-                <input id="color_v" type="color"/>
-                <label for="color_v" class="color_label">v</label>
-            </div>
-            <div class="color_g">
-                <input id="color_b" type="color"/>
-                <label for="color_b" class="color_label">b</label>
-            </div>
-            <div class="color_g">
-                <input id="color_n" type="color"/>
-                <label for="color_n" class="color_label">n</label>
-            </div>
-            <div class="color_g">
-                <input id="color_m" type="color"/>
-                <label for="color_m" class="color_label">m</label>
-            </div>
-        </div>
-        
-        <div id="biblioteca"></div>
-        
-    </div>
-    
-    <script src="musica.js"></script>
-    <script src="grilla.js"></script>
-    <script src="monitor.js"></script>
-    <script src="codigo.js"></script>
-    <script src="controles.js"></script>
-    <script src="colores.js"></script>
-    
-    <script>
-        tippy('#codigo_expandido', {
-              allowHTML: true,
-              content: '<p>Usá las letras <b>w</b>, <b>a</b>, <b>s</b> y <b>d</b> para indicar movimiento, y las letras <b>z</b>, <b>x</b>, <b>c</b>, <b>v</b>, <b>b</b>, <b>n</b> y <b>m</b> para pintar. Cada una de esas letras corresponde con uno de los colores que se encuentran al fondo de la página ↓↓↓</p>',
-              theme: 'azure',
-              // Debug:
-              //hideOnClick: false,
-              //trigger: 'click'
-              });
-              
-          tippy('#codigo_compacto', {
-                allowHTML: true,
-                content: '<p>Encerrá instrucciones entre paréntesis y poné un número al final para que esas instrucciones se repitan ese número de veces. Por ejemplo, <b>(</b>sdv<b>)3</b> es equivalete a sdvsdvsdv</p>',
-                theme: 'azure',
-                });
-                
-          tippy('#label_escribir', {
-                allowHTML: true,
-                content: '<p>Las instrucciones que ejecutes mientras esto esté encendido, ¡se van a escribir automáticamente a las cajas de código! Acordate de apagarla cuando no quieras agregar más código</p>',
-                theme: 'azure',
-              });
-              
-          tippy('#label_delay', {
-                allowHTML: true,
-                content: '<p>Este valor controla la velocidad con la que se ejecutan los programas. Cuanto más chico el valor, más rápido corre el programa.</p>',
-                theme: 'azure',
-                });
-    </script>
-    
-</body>
