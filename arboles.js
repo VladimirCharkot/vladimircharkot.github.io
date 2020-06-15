@@ -253,7 +253,7 @@ tippy('#codigo', {
 
 
 
-
+/*
 // funciones para descargar como png, tomadas de:
 // http://bl.ocks.org/Rokotyan/0556f8facbaf344507cdc45dc3622177
 
@@ -426,3 +426,4 @@ function updateDownloadURL(svg, link) {
 }
 
 updateDownloadURL(svg.node(), document.getElementById('download'));
+*/
