@@ -136,7 +136,7 @@ function arbol(data){
     var nodes = root.descendants();
     
     var svg = d3.create("svg")
-    .attr("viewBox", [-nodeSize / 2, -nodeSize * 3 / 2, width, (nodes.length + 1) * nodeSize])
+    //.attr("viewBox", [-nodeSize / 2, -nodeSize * 3 / 2, width, (nodes.length + 1) * nodeSize])
     .attr("font-family", "sans-serif")
     .attr("font-size", 10)
     .style("overflow", "visible");

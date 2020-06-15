@@ -13,6 +13,7 @@
 #arbol{
     grid-row: 2;
     grid-column: 2;
+    padding: 20px;
 }
 
 #data{
