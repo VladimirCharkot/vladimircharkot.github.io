@@ -224,8 +224,6 @@ function updateArbol(texto){
     area_arbol.appendChild(arbol(data));
 }
 
-updateArbol(document.querySelector("#codigo").value);
-
 
 
 
@@ -242,8 +240,25 @@ tippy('#codigo', {
 
 
 
+document.querySelector('#codigo').value = (`Videojuegos
+ Aventura
+  Roblox
+   Adopt Me
+   Jailbreak
+  Minecraft
+  Horizon
+ Ficción
+  God of war
+  Dragon ball
+ Armas
+  Fortnite
+  Free fire
+  Call of duty
+ Plataforma
+  Plants vs Zombies
+  Super Mario Bros`)
 
-
+updateArbol(document.querySelector("#codigo").value);
 
 
 
