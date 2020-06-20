@@ -1,0 +1,65 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Tooltips -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+        <link rel="stylesheet" href="arboles.css" />
+        
+        <style>
+            #base{
+                display: grid;
+                grid-template-columns:  1fr 1fr 1fr;
+                grid-template-rows:     1fr;
+                align-items:            center;
+                justify-content:        center;
+                
+                height: 100vh;
+                width: 100vw;
+            }
+        
+        .put{
+            display: flex;
+            flex-direction: column;
+            padding: 5vw;
+        }
+        
+        .cod{
+            border-radius: 10px;
+            height: 80vh;
+            resize: none;
+            border: 1px solid gainsboro;
+            padding: 10px;
+        }
+        
+        #derecha{
+            grid-column: 3;
+        }
+        
+        </style>
+        
+    </head>
+    
+    <body>
+        <div id="base">
+            <div id="izquierda" class="put">
+                <input id="shift" onkeyup="encriptar()"></input>
+                <textarea id="input" class="cod" onkeyup="encriptar()"></textarea>
+            </div>
+            <div id="derecha" class="put">
+                <textarea id="output" class="cod"></textarea>
+            </div>
+        </div>
+    
+        <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+        <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script src="cesar.js"></script>
+    
+    
+    
+    </body>
+
+</html>
