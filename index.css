@@ -32,3 +32,20 @@ a:hover{
 #arboles{
     font-family: 'Amatic SC', cursive;
     }
+
+#arbolimg{
+    height: 110px;
+    transform: translateX(62px);
+    z-index: -1;
+}
+
+#cesar{
+    font-family: 'Tangerine', cursive;
+}
+
+#cesarimg{
+    width: 90px;
+    height: 110px;
+    transform: translateX(520px);
+    opacity: 0.3;
+}
