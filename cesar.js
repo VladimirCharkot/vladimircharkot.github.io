@@ -1,12 +1,20 @@
 abc = 'abcdefghijklmnñopqrstuvwxyz'
 ABC = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
 
+const TextField = mdc.textField.MDCTextField;
+
 function encriptar(){
-    var texto = stripAcentos(document.querySelector("#input").value);
-    var shift = parseInt(document.querySelector("#shift").value);
-    var out = document.querySelector("#output");
+    
+    var texto_input = new TextField(document.querySelector('#input'));
+    var texto = stripAcentos(texto_input.value);
+    
+    var shift_input = new TextField(document.querySelector('#shift'));
+    var shift = parseInt(shift_input.value);
+    
+    var out = new TextField(document.querySelector('#output'));
     if (!shift || !texto) return;
     out.value = cesar(texto, shift);
+    
 }
 
 function cesar(texto, shift){
