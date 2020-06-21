@@ -12,16 +12,16 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         
         <style>
-            #base{
-                display: grid;
-                grid-template-columns:  4fr 1fr 4fr;
-                grid-template-rows:     1fr;
-                align-items:            center;
-                justify-content:        center;
-                
-                height: 100vh;
-                width: 100vw;
-            }
+        #base{
+            display: grid;
+            grid-template-columns:  4fr 1fr 4fr;
+            grid-template-rows:     4fr 1fr 4fr;
+            align-items:            center;
+            justify-content:        center;
+            
+            height: 100vh;
+            width: 100vw;
+        }
         
         .columna{
             display: flex;
@@ -31,6 +31,7 @@
         
         .cod-area{
             height: 80vh;
+            width: 100%;
         }
         
         .cod-text-box{
@@ -39,9 +40,55 @@
             padding: 10px;
         }
         
+        #centro{
+            grid-column: 2;
+            grid-row: 2;
+        }
+        
+        
+        
+        #izquierda{
+            grid-column: 1;
+            grid-row: 1 / 4;
+        }
+        
         #derecha{
             grid-column: 3;
+            grid-row: 1 / 4;
         }
+        
+        @media (width<height){
+
+        }
+        
+        @media (orientation:portrait) {
+            .cod-area{
+                height: 100%;
+                width: 80vw;
+            }
+            #izquierda{
+                grid-row: 1;
+                grid-column: 1 / 4;
+            }
+            
+            #derecha{
+                grid-row: 3;
+                grid-column: 1 / 4;
+            }
+        }
+        @media (orientation:landscape) {
+            #izquierda{
+                grid-column: 1;
+                grid-row: 1 / 4;
+            }
+            
+            #derecha{
+                grid-column: 3;
+                grid-row: 1 / 4;
+            }
+        }
+        
+        /*@media (min-device-width: 640px) { ... }*/
         
         </style>
         
@@ -93,9 +140,6 @@
         </div>
     
         <script src="cesar.js"></script>
-        <script>
-                mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
-        </script>
     
     
     </body>
