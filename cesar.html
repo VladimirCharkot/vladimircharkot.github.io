@@ -26,12 +26,13 @@
         .columna{
             display: flex;
             flex-direction: column;
-            padding: 5vw;
+            padding: 2vw;
         }
         
         .cod-area{
             height: 80vh;
-            width: 100%;
+            width: 30vw;
+            align-self: center;
         }
         
         .cod-text-box{
@@ -57,14 +58,19 @@
             grid-row: 1 / 4;
         }
         
-        @media (width<height){
-
+        
+        @media only screen
+        and (max-width: 600px) {
+            html{
+                font-size: 24px;
+            }
         }
         
         @media (orientation:portrait) {
             .cod-area{
                 height: 30vh;
                 width: 80vw;
+                align-self: center;
             }
             #izquierda{
                 grid-row: 1;
@@ -77,6 +83,11 @@
             }
         }
         @media (orientation:landscape) {
+            .cod-area{
+                height: 80vh;
+                width: 30vw;
+                align-self: center;
+            }
             #izquierda{
                 grid-column: 1;
                 grid-row: 1 / 4;
