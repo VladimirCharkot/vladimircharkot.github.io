@@ -37,6 +37,7 @@ a:hover{
     height: 110px;
     transform: translateX(62px);
     z-index: -1;
+    position: relative;
 }
 
 #cesar{
