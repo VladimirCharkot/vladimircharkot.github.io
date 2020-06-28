@@ -90,3 +90,5 @@ var titu = listas[1].querySelector(".lista input");
 titu.value = "lugar";
 var cosas = listas[1].querySelector(".lista textarea");
 cosas.value = "casa\nla calle\nel colegio";
+
+aplicar()

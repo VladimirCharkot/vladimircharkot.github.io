@@ -56,3 +56,9 @@ a:hover{
     font-size: 70px;
     padding-left: 25vw;
 }
+
+
+/* Colores de los enlaces: */
+a:hover{
+    color: #f4ebc1;
+}
