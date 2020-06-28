@@ -50,3 +50,9 @@ a:hover{
     transform: translateX(520px);
     opacity: 0.3;
 }
+
+#variables{
+    font-family: 'Major Mono Display', monospace;
+    font-size: 70px;
+    padding-left: 25vw;
+}

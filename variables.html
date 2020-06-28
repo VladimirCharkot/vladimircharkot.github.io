@@ -1,0 +1,175 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Tooltips -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+        <link rel="stylesheet" href="variables.css" />
+        
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+        
+        <style>
+            
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #base{
+            display: grid;
+            grid-template-columns:  4fr 1fr 4fr;
+            grid-template-rows:     4fr 1fr 4fr;
+            align-items:            center;
+            justify-content:        center;
+            
+            height: 90vh;
+            width: 100vw;
+        }
+        
+        label{
+            font-size: 0.7em;
+            font-family: 'MuseoModerno', cursive;
+        }
+        
+        input{
+            padding: 1em;
+            font-family: 'Cutive Mono', monospace;
+            border-radius: 4px;
+        }
+        
+        textarea{
+            padding: 1em;
+            font-family: 'Cutive Mono', monospace;
+            border-radius: 4px;
+        }
+        
+        #centro{
+            grid-column: 2;
+            grid-row: 2;
+            
+            display: flex;
+        }
+        
+        #centro button{
+            font-size: 0.7em;
+            font-family: 'MuseoModerno', cursive;
+            width: 10em;
+        }
+        
+        .cerrar{
+            float: right;
+            font-family: 'MuseoModerno', cursive;
+        }
+        
+        
+        
+        .fila{
+            display: flex;
+            flex-direction: row;
+            padding: 2vw;
+        }
+        
+        .lista{
+            display: flex;
+            flex-direction: column;
+            padding: 1vw;
+        }
+        
+        .lista textarea{
+            height: 100%;
+            resize: none;
+        }
+        
+        
+        #arriba{
+            grid-row: 1;
+            grid-column: 1 / 4;
+            
+            display: flex;
+            flex-direction: row;
+            
+            height: 100%;
+            overflow: scroll;
+        }
+        
+        #abajo{
+            grid-row: 3;
+            grid-column: 1 / 4;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            height: 100%;
+        }
+        
+        #plantilla{
+            resize: none;
+            padding: 10px;
+            height: 50%;
+            width: 80vw;
+            align-self: center;
+        }
+        
+        #salida{
+            resize: none;
+            padding: 10px;
+            width: 80vw;
+            height: 50%;
+            align-self: center;
+        }
+        
+        
+        @media only screen
+        and (max-width: 600px) {
+            html{
+                font-size: 24px;
+            }
+        }
+        
+        @media only screen
+        and (max-device-width: 600px) {
+            html{
+                font-size: 36px;
+            }
+        }
+        
+        
+        /*@media (min-device-width: 640px) { ... }*/
+        
+        </style>
+        
+    </head>
+    
+    <body>
+        <div id="base">
+            
+            <div id="arriba" class="fila"></div>
+            
+            <div id="centro" class="fila">
+                
+                <button id="agregar" onclick="agregar_variable()">Agregar</button>
+                <button id="aplicar" onclick="aplicar()">Aplicar</button>
+                
+            </div>
+            
+            <div id="abajo" class="fila">
+                
+                <textarea id="plantilla"></textarea>
+                <textarea id="salida"></textarea>
+                
+            </div>
+            
+        </div>
+    
+        <script src="variables.js"></script>
+    
+    
+    </body>
+
+</html>

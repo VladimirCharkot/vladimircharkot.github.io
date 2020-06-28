@@ -26,7 +26,7 @@ function cesar(texto, shift){
         if (abc.includes(texto[i])){
             encriptado += abc[(abc.indexOf(texto[i]) + shift + abc.length) % abc.length];
         }else if (ABC.includes(texto[i])){
-            encriptado += ABC[(ABC.indexOf(texto[i]) + shift + abc.length) % ABC.length];
+            encriptado += ABC[(ABC.indexOf(texto[i]) + shift + ABC.length) % ABC.length];
         }else{
             encriptado += texto[i];
         }
