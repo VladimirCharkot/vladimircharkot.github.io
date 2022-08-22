@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Mi coso &lt;3</title>
+    <title>Posts on Profe Vladi</title>
     <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on Mi coso &lt;3</description>
+    <description>Recent content in Posts on Profe Vladi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Aug 2022 23:02:52 -0300</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mi cosito</title>
-      <link>http://example.org/posts/my-first-post/</link>
+      <title>Una primera clase de Python</title>
+      <link>http://example.org/posts/python-1-1/</link>
       <pubDate>Sun, 21 Aug 2022 23:02:52 -0300</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description>Este es mi primer post en H U G O
-print(&amp;#34;A ver&amp;#34;) </description>
+      <guid>http://example.org/posts/python-1-1/</guid>
+      <description>Calentando los motores Los juegos de toxicode son una excelente preparación:
+ Compute-it Silent Teacher  Introducción Si atravesamos los juegos de toxicode tendremos un entendimiento de instrucciones, condicionales, repeticiones y funciones.
+Lo próximo es lanzar el IDLE e familiarizarnos con el intérprete (que ejecuta el código línea por línea tan pronto la ingresamos) y con los scripts (que acumulan muchas líneas en un archivo de texto y las ejecutan secuencialmente).</description>
     </item>
     
   </channel>
